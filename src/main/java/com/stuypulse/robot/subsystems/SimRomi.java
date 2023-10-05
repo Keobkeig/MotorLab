@@ -48,7 +48,7 @@ public class SimRomi extends Robot {
 			WHEEL_DIAMETER_METERS / 2,
 			new Matrix<N7, N1>(Nat.N7(), Nat.N1()));
 
-		odometry = new DifferentialDriveOdometry(getRotation2d());
+			odometry = new DifferentialDriveOdometry(getRotation2d(), 0, 0);
 
 		field = new Field2d();
 
@@ -70,7 +70,7 @@ public class SimRomi extends Robot {
 	public void reset(Pose2d pose) {
 		sim.setPose(pose);
 
-		odometry.resetPosition(pose, new Rotation2d());
+		odometry.resetPosition(new Rotation2d(), 0, 0, pose);
 	}
 
 	public Rotation2d getRotation2d() {

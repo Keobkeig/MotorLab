@@ -55,7 +55,7 @@ public class Romi extends Robot {
     left = new RomiMotor(leftMotor, leftEncoder);
     right = new RomiMotor(rightMotor, rightEncoder);
 
-    odometry = new DifferentialDriveOdometry(getRotation2d());
+    odometry = new DifferentialDriveOdometry(getRotation2d(), 0, 0);
 
     SmartDashboard.putData(field);
   }
@@ -69,7 +69,7 @@ public class Romi extends Robot {
     leftEncoder.reset();
     rightEncoder.reset();
 
-    odometry.resetPosition(pose, new Rotation2d());
+    odometry.resetPosition(new Rotation2d(), 0, 0, pose);
   }
 
   public double getRadians() {
